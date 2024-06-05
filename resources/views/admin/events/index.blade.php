@@ -1,13 +1,13 @@
-<!-- resources/views/admin/destinations/index.blade.php -->
+<!-- resources/views/admin/events/index.blade.php -->
 
 @extends('admin.layouts.header')
 
 @section('content')
     <div class="container mx-auto mt-8">
         <div class="flex justify-between items-center mb-4">
-            <h1 class="text-2xl font-semibold">Data Destinasi</h1>
-            <a href="{{ route('admin.destinations.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add New
-                Destination</a>
+            <h1 class="text-2xl font-semibold">Data Event</h1>
+            <a href="{{ route('admin.events.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add New
+                event</a>
         </div>
         @if (session('success'))
             <div class="bg-green-500 text-white p-4 mb-4 rounded-md">
@@ -21,38 +21,41 @@
                         <th class="w-1/12 px-4 py-2 text-xs">No</th> <!-- Reduced width and font size -->
                         <th class="w-1/6 px-4 py-2">Nama</th>
                         <th class="w-1/6 px-4 py-2">Deskripsi</th>
+                        <th class="w-1/6 px-4 py-2">Tanggal</th>
                         <th class="w-1/6 px-4 py-2">Lokasi/Alamat</th>
                         <th class="w-1/6 px-4 py-2">Image</th>
-                        {{-- <th class="w-1/6 px-4 py-2">Tips</th> --}}
                         <th class="w-1/6 px-4 py-2">Map Link</th>
                         <th class="w-1/6 px-4 py-2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700">
-                    @foreach ($destinations as $destination)
+                    @foreach ($events as $event)
                         <tr>
                             <td class="border px-4 py-2 text-xs text-center">{{ $loop->iteration }}</td>
-                            <td class="border px-4 py-2">{{ $destination->name }}</td>
+                            <td class="border px-4 py-2">{{ $event->name }}</td>
                             <td class="border px-4 py-2">
-                                {{ \Illuminate\Support\Str::limit($destination->description, 70) }}</td>
-                            <td class="border px-4 py-2">
-                                {{ \Illuminate\Support\Str::limit($destination->location, 70) }}</td>
+                                {{ \Illuminate\Support\Str::limit($event->description, 70) }}</td>
 
                             <td class="border px-4 py-2">
-                                <img src="{{ asset($destination->image) }}" alt="{{ $destination->name }}"
+                                {{ $event->date }}</td>
+
+                            <td class="border px-4 py-2">
+                                {{ \Illuminate\Support\Str::limit($event->location, 70) }}</td>
+
+                            <td class="border px-4 py-2">
+                                <img src="{{ asset($event->image) }}" alt="{{ $event->name }}"
                                     class="w-16 h-16 object-cover">
                             </td>
-                            {{-- <td class="border px-4 py-2">
-                                {{ \Illuminate\Support\Str::limit($destination->tips, 70) }}</td> --}}
+
                             <td class="border px-4 py-2">
-                                {{ \Illuminate\Support\Str::limit($destination->map_link, 50) }}
+                                {{ \Illuminate\Support\Str::limit($event->map_link, 50) }}
                             </td>
 
                             <td class="border px-4 py-2 flex space-x-2">
-                                <a href="{{ route('admin.destinations.edit', $destination->id) }}"
+                                <a href="{{ route('admin.events.edit', $event->id) }}"
                                     class="bg-yellow-500 text-white px-2 py-1 rounded-md">Edit</a>
-                                <form action="{{ route('admin.destinations.destroy', $destination->id) }}" method="POST"
-                                    onsubmit="return confirm('Are you sure you want to delete this destination?');">
+                                <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST"
+                                    onsubmit="return confirm('Are you sure you want to delete this event?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"

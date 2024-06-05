@@ -24,10 +24,9 @@ class DestinationController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'category' => 'required',
             'description' => 'required | min:10 | max:10000',
             'location' => 'required',
-            'tips' => 'required',
+            'map_link' => 'required',
             'image' => 'required | image | mimes:jpeg,png,jpg | max:5000',
         ]);
 
@@ -44,10 +43,9 @@ class DestinationController extends Controller
 
         Destination::create([
             'name' => $request->name,
-            'category' => $request->category,
             'description' => $request->description,
             'location' => $request->location,
-            'tips' => $request->tips,
+            'map_link' => $request->map_link,
             'image' => $path . $filename,
         ]);
 
@@ -64,10 +62,9 @@ class DestinationController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'category' => 'required',
             'description' => 'required | min:10 | max:10000',
             'location' => 'required',
-            'tips' => 'required',
+            'map_link' => 'required',
             'image' => 'required | image | mimes:jpeg,png,jpg | max:5000',
         ]);
 
@@ -90,10 +87,9 @@ class DestinationController extends Controller
 
         $destination->update([
             'name' => $request->name,
-            'category' => $request->category,
             'description' => $request->description,
             'location' => $request->location,
-            'tips' => $request->tips,
+            'map_link' => $request->map_link,
             'image' => $request->has('image') ? $path . $filename : $destination->image,
         ]);
 

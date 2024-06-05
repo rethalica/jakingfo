@@ -14,7 +14,7 @@ class Event extends Model
         'description',
         'date',
         'location',
-        'tips',
+        'map_link',
         'image'
     ];
 }

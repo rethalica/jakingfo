@@ -14,7 +14,7 @@ class Destination extends Model
         'category',
         'description',
         'location',
-        'tips',
+        'map_link',
         'image'
     ];
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->date('date');
             $table->string('location');
-            $table->text('tips');
+            $table->text('map_link');
             $table->string('image')->nullable();
             $table->timestamps();
         });

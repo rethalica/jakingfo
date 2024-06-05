@@ -27,7 +27,7 @@ class EventController extends Controller
             'description' => 'required | min:10 | max:10000',
             'date' => 'required',
             'location' => 'required',
-            'tips' => 'required',
+            'map_link' => 'required',
             'image' => 'required | image | mimes:jpeg,png,jpg | max:5000',
         ]);
 
@@ -47,7 +47,7 @@ class EventController extends Controller
             'description' => $request->description,
             'date' => $request->date,
             'location' => $request->location,
-            'tips' => $request->tips,
+            'map_link' => $request->map_link,
             'image' => $path . $filename,
         ]);
 
@@ -70,7 +70,7 @@ class EventController extends Controller
             'description' => 'required',
             'date' => 'required',
             'location' => 'required',
-            'tips' => 'required',
+            'map_link' => 'required',
             'image' => 'image | mimes:jpeg,png,jpg | max:5000',
         ]);
 
@@ -96,7 +96,7 @@ class EventController extends Controller
             'description' => $request->description,
             'date' => $request->date,
             'location' => $request->location,
-            'tips' => $request->tips,
+            'map_link' => $request->map_link,
             'image' => $request->has('image') ? $path . $filename : $event->image,
         ]);
 
