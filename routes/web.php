@@ -39,8 +39,8 @@ require __DIR__ . '/auth.php';
 //     Route::resource('events', EventController::class);
 // });
 
-Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
-    Route::get('dashboard', [HomeController::class, 'index']);
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
 
     Route::resource('destinations', DestinationController::class);
     Route::resource('events', EventController::class);
