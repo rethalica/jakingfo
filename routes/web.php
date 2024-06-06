@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
@@ -33,12 +34,24 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::prefix('admin')->name('admin.')->group(function () {
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::resource('destinations', DestinationController::class);
+//     Route::resource('events', EventController::class);
+// });
+
+Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
+    Route::get('dashboard', [HomeController::class, 'index']);
+
     Route::resource('destinations', DestinationController::class);
     Route::resource('events', EventController::class);
 });
 
-Route::get('/destinations', [ViewController::class, 'destination_index']);
-Route::get('/destinations/{id}', [ViewController::class, 'destination_show']);
-Route::get('/events', [ViewController::class, 'event_index']);
-Route::get('/events/{id}', [ViewController::class, 'event_show']);
+// Route::get('/destinations', [ViewController::class, 'destination_index']);
+// Route::get('/destinations/{id}', [ViewController::class, 'destination_show']);
+// Route::get('/events', [ViewController::class, 'event_index']);
+// Route::get('/events/{id}', [ViewController::class, 'event_show']);
+
+Route::get('/destinations', [ViewController::class, 'destination_index'])->name('destinations.index');
+Route::get('/destinations/{id}', [ViewController::class, 'destination_show'])->name('destinations.show');
+Route::get('/events', [ViewController::class, 'event_index'])->name('events.index');
+Route::get('/events/{id}', [ViewController::class, 'event_show'])->name('events.show');

@@ -54,8 +54,8 @@
                     </div> --}}
 
                     <div>
-                        <label for="map_link" class="block text-sm font-medium text-gray-700">Link Google Maps</label>
-                        <input type="text" name="map_link" id="map_link"
+                        <label for="map_url" class="block text-sm font-medium text-gray-700">Google Maps Embed URL</label>
+                        <input type="text" name="map_url" id="map_url"
                             class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             required>
                     </div>
