@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/dashboard', function () {
@@ -55,3 +55,4 @@ Route::get('/destinations', [ViewController::class, 'destination_index'])->name(
 Route::get('/destinations/{id}', [ViewController::class, 'destination_show'])->name('destinations.show');
 Route::get('/events', [ViewController::class, 'event_index'])->name('events.index');
 Route::get('/events/{id}', [ViewController::class, 'event_show'])->name('events.show');
+Route::get('/', [ViewController::class, 'showHomePage']);

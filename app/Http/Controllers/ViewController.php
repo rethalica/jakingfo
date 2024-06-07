@@ -25,4 +25,18 @@ class ViewController extends Controller
         $events = Event::all();
         return view('events.index', compact('events'));
     }
+
+    public function event_show(string $id)
+    {
+        $event = Event::findOrFail($id);
+        return view('events.show', compact('event'));
+    }
+
+    public function showHomePage()
+    {
+        $destinations = Destination::all();
+        $events = Event::all();
+
+        return view('homepage', compact('destinations', 'events'));
+    }
 }

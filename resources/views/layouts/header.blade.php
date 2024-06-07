@@ -58,11 +58,13 @@
 
             <div class="md:flex items-center justify-center navbar" :class="{ 'hidden': !open, 'flex': open }">
                 <div class="flex flex-col md:flex-row md:mx-6 text-center">
-                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0 " href="#home">Home</a>
+                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0 "
+                        href="{{ url('/') }}">Home</a>
                     <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="about.html">Tentang</a>
                     <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0"
                         href="{{ route('destinations.index') }}">Destinasi Wisata</a>
-                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="event.html">Aktivitas dan
+                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0"
+                        href="{{ route('events.index') }}">Aktivitas dan
                         Acara</a>
                     <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="tips.html">Tips
                         Perjalanan</a>
