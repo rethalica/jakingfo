@@ -7,8 +7,9 @@
         <!-- flex-col for vertical layout on small screens, flex-row for horizontal layout on larger screens -->
         <div class="flex flex-col sm:flex-row justify-between items-center mb-4">
             <h1 class="text-2xl font-semibold mb-2 sm:mb-0">Data Destinasi</h1>
-            <a href="{{ route('admin.destinations.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded-md">Add New
-                Destination</a>
+            <a href="{{ route('admin.destinations.create') }}"
+                class="bg-blue-900 text-white font-semibold px-4 py-2 rounded-md">Tambah
+                Destinasi</a>
         </div>
         @if (session('success'))
             <div class="bg-green-500 text-white p-4 mb-4 rounded-md">

@@ -15,10 +15,10 @@
                         juga menyediakan tips perjalanan yang dapat membantu anda dalam
                         merencanakan perjalanan anda.
                     </p>
-                    <button id="joinBtn"
+                    {{-- <button id="joinBtn"
                         class="btn btn-outline-light btn-lg rounded-1 me-2 animate__animated animate__fadeInUp animate__delay-1s">
                         Penasaran? Klik di sini
-                    </button>
+                    </button> --}}
                 </div>
             </div>
         </div>

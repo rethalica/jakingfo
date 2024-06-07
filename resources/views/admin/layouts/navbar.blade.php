@@ -1,4 +1,4 @@
-<nav class="bg-gray-800 p-4 text-white">
+<nav class="bg-gray-800 p-4 text-white sticky top-0 z-50">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <h1 class="text-lg font-semibold mb-2 md:mb-0">JakIngfo Admin</h1>
         <div class="flex space-x-4 font-semibold">
@@ -15,7 +15,7 @@
         <form method="POST" action="{{ route('logout') }}" class="mt-2 md:mt-0">
             @csrf
             <button type="submit"
-                class="bg-transparent hover:bg-blue-900 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded">
+                class="bg-transparent hover:bg-blue-900 text-white-700 font-semibold hover:text-white py-2 px-4 rounded">
                 Logout
             </button>
         </form>
