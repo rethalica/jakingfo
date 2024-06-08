@@ -22,6 +22,15 @@
                     </div>
                 </div>
             </div>
+            <div class="overflow-hidden shadow-sm sm:rounded-lg animate__animated animate__fadeInRight" data-aos="zoom-in">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <h3 class="text-lg font-semibold">Total User</h3>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users text-gray-600"></i>
+                        <p class="text-gray-600 text-2xl">{{ $totalUsers }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
