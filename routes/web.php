@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/tips', function () {
+    return view('tips');
+})->name('tips');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -41,6 +45,11 @@ require __DIR__ . '/auth.php';
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+    // Menambahkan route baru untuk mencetak semua data destinasi dalam bentuk PDF
+    Route::get('destinations/pdf', [HomeController::class, 'view_pdf'])->name('destinations.pdf');
+    Route::get('dashboard/userpdf', [HomeController::class, 'user_pdf'])->name('users.pdf');
+    Route::get('dashboard/userexcel', [HomeController::class, 'user_excel'])->name('users.excel');
 
     Route::resource('destinations', DestinationController::class);
     Route::resource('events', EventController::class);

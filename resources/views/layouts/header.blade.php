@@ -68,9 +68,13 @@
                     <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0"
                         href="{{ route('events.index') }}">Aktivitas dan
                         Acara</a>
-                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="tips.html">Tips
+                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="{{ route('tips') }}">Tips
                         Perjalanan</a>
                     <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0" href="kontak.html">Kontak</a>
+                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0"
+                        href="{{ route('login') }}">Login</a>
+                    <a class="my-1 text-sm text-white hover:underline md:mx-4 md:my-0"
+                        href="{{ route('register') }}">Register</a>
                 </div>
             </div>
         </div>

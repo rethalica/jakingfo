@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                 <li class="nav-item">
-                    <a class="nav-link active mx-1" aria-current="page" href="#home">Home</a>
+                    <a class="nav-link active mx-1" aria-current="page" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="about.html">Tentang kami</a>
@@ -21,17 +21,29 @@
                     <a class="nav-link mx-1" href="{{ route('events.index') }}">Aktivitas dan Acara</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="tips.html">Tips Perjalanan</a>
+                    <a class="nav-link mx-1" href="{{ route('tips') }}">Tips Perjalanan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="kontak.html">Kontak</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-1" href="{{ route('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-1" href="{{ route('register') }}">Register</a>
-                </li>
+                @if (Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="{{ route('register') }}">Register</a>
+                    </li>
+                @endif
             </ul>
 
             {{-- <div class="text-center">

@@ -6,7 +6,12 @@
             <div class="row">
                 <div class="col text-center">
                     <h1 class="text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                        Strolling around Jakarta with us <br />
+                        {{-- kondisi jika user login/tidak --}}
+                        @if (Auth::check())
+                            Halo, {{ Auth::user()->name }}, siap menjelajahi Jakarta? <br />
+                        @else
+                            Strolling around Jakarta with us <br />
+                        @endif
                         <!-- Sukses Jakarta Untuk Indonesia -->
                     </h1>
                     <p class="text-white mb-4 text-opacity-75 animate__animated animate__fadeInUp animate__delay-1s">

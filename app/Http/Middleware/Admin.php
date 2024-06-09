@@ -18,7 +18,7 @@ class Admin
     {
 
         if (Auth::user()->role !== 'admin')
-            return redirect('/welcome')->with('error', 'You are not authorized to access this page');
+            return redirect('/')->with('error', 'You are not authorized to access this page');
 
         return $next($request);
     }
