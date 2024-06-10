@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
             return redirect('admin/dashboard');
         }
 
-        return redirect()->intended('/');
+        return redirect()->intended('/kata-mereka');
 
         // return redirect()->intended(RouteServiceProvider::HOME);
     }

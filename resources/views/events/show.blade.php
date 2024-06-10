@@ -13,7 +13,7 @@
                 <div class="flex justify-center">
 
                     <div class="w-full">
-                        <iframe src="{{ $destination->map_link }}" width="100%" height="300" style="border:0;"
+                        <iframe src="{{ $event->map_link }}" width="100%" height="300" style="border:0;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 

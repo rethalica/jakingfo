@@ -6,6 +6,16 @@
             <div class="p-6 bg-white border-b border-gray-200">
                 <h2 class="text-2xl font-semibold leading-tight">Tambah Destinasi Baru</h2>
 
+                @if ($errors->any())
+                    <div class="mb-4">
+                        <ul class="list-disc list-inside text-sm text-red-600">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ route('admin.destinations.store') }}" method="POST" enctype="multipart/form-data"
                     class="mt-6 space-y-6">
                     @csrf
@@ -17,27 +27,12 @@
                             required>
                     </div>
 
-                    {{-- <div>
-                        <label for="category" class="block text-sm font-medium text-gray-700">Kategori Destinasi</label>
-                        <select name="category" id="category"
-                            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            required>
-                            <option value="">Pilih Kategori</option>
-                            <option value="wisata alam">Wisata Alam</option>
-                            <option value="wisata sejarah">Wisata Sejarah</option>
-                            <option value="wisata religi">Wisata Religi</option>
-                            <option value="wisata keluarga">Wisata Keluarga</option>
-                            <option value="wisata kuliner">Wisata Kuliner</option>
-                        </select>
-                    </div> --}}
-
                     <div>
                         <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
                         <textarea name="description" id="description" rows="6"
                             class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             required></textarea>
                     </div>
-
 
                     <div>
                         <label for="location" class="block text-sm font-medium text-gray-700">Lokasi</label>
@@ -46,16 +41,9 @@
                             required>
                     </div>
 
-                    {{-- <div>
-                        <label for="tips" class="block text-sm font-medium text-gray-700">Tips</label>
-                        <textarea name="tips" id="tips" rows="6"
-                            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            required></textarea>
-                    </div> --}}
-
                     <div>
-                        <label for="map_url" class="block text-sm font-medium text-gray-700">Google Maps Embed URL</label>
-                        <input type="text" name="map_url" id="map_url"
+                        <label for="map_link" class="block text-sm font-medium text-gray-700">Google Maps Embed URL</label>
+                        <input type="text" name="map_link" id="map_link"
                             class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             required>
                     </div>

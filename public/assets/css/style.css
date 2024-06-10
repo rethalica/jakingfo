@@ -12,7 +12,7 @@
 
 .navbar.scrolling-active {
     background-color: #15181f;
-    padding: 15px 0 15px 0;
+    padding: 10px 0 10px 0;
 }
 
 .navbar i {
@@ -49,6 +49,32 @@
 .about .row .col:nth-child(1) {
     background-color: #15181f;
 }
+
+/* untuk halaman tips */
+.bgim {
+    background-image: url("/assets/img/bg1.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.tips-row {
+    padding-left: 20%;
+}
+/* batas akhir halaman tips */
 
 .footer {
     min-height: 60vh;
