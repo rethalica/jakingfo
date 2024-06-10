@@ -10,17 +10,13 @@
                     {{ $destination->description }}</p>
                 <p class="text-gray-600 text-lg leading-relaxed"><strong>Alamat:</strong> {{ $destination->location }}</p>
                 <br>
-                <div class="flex space-x-4">
+                <div class="flex justify-center">
 
-                    <div class="w-1/2">
+                    <div class="w-full">
                         <iframe src="{{ $destination->map_link }}" width="100%" height="300" style="border:0;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
-                    <div class="w-1/2">
-                        <img src="{{ asset($destination->image) }}" alt="{{ $destination->name }}"
-                            class="w-full h-64 object-cover">
-                    </div>
                 </div>
 
                 <a href="{{ route('destinations.index') }}" class="text-indigo-500 mt-4 inline-block">Kembali</a>

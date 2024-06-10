@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Destination;
 use App\Models\Event;
 use App\Models\User;
@@ -18,21 +19,9 @@ class HomeController extends Controller
         $totalDestinations = Destination::count();
         $totalEvents = Event::count();
         $totalUsers = User::where('role', 'user')->count();
-        return view('admin.dashboard', compact('totalDestinations', 'totalEvents', 'totalUsers'));
-    }
-
-    public function view_pdf()
-    {
-        $destinations = Destination::all();
-
-        $data = [
-            'title' => 'JakIngfo  - List Destinasi',
-            'date' => date('d/m/Y'),
-            'destinations' => $destinations
-        ];
-
-        $pdf = Pdf::loadView('admin.destinations.listpdf', $data);
-        return $pdf->download('destinations.pdf');
+        $totalApprovedComments = Comment::where('approved', true)->count();
+        $totalUnapprovedComments = Comment::where('approved', false)->count();
+        return view('admin.dashboard', compact('totalDestinations', 'totalEvents', 'totalUsers', 'totalApprovedComments', 'totalUnapprovedComments'));
     }
 
     public function user_pdf()
@@ -53,5 +42,20 @@ class HomeController extends Controller
     public function user_excel()
     {
         return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
+    public function comments_pdf()
+    {
+
+        $comments = Comment::where('approved', true)->get();
+
+        $data = [
+            'title' => 'JakIngfo  - Data komentar',
+            'date' => date('d/m/Y'),
+            'comments' => $comments
+        ];
+
+        $pdf = Pdf::loadView('admin.commentpdf', $data);
+        return $pdf->download('comments.pdf');
     }
 }

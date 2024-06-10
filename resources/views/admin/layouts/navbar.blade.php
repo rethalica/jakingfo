@@ -11,6 +11,9 @@
             <a href="{{ route('admin.events.index') }}" class="text-white hover:text-gray-500">
                 <i class="fas fa-calendar-alt"></i> Event
             </a>
+            <a href="{{ route('admin.comments.index') }}" class="text-white hover:text-gray-500">
+                <i class="fas fa-comment-alt"></i> Komentar
+            </a>
         </div>
         <form method="POST" action="{{ route('logout') }}" class="mt-2 md:mt-0">
             @csrf

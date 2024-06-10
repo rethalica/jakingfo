@@ -9,22 +9,28 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                 <li class="nav-item">
-                    <a class="nav-link active mx-1" aria-current="page" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link mx-1 {{ Request::is('/') ? 'active' : '' }}" aria-current="page"
+                        href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="about.html">Tentang kami</a>
+                    <a class="nav-link mx-1 {{ Request::is('about') ? 'active' : '' }}" href="about.html">Tentang
+                        kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="{{ route('destinations.index') }}">Destinasi Wisata</a>
+                    <a class="nav-link mx-1 {{ Request::is('destinations*') ? 'active' : '' }}"
+                        href="{{ route('destinations.index') }}">Destinasi Wisata</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="{{ route('events.index') }}">Aktivitas dan Acara</a>
+                    <a class="nav-link mx-1 {{ Request::is('events*') ? 'active' : '' }}"
+                        href="{{ route('events.index') }}">Aktivitas dan Acara</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="{{ route('tips') }}">Tips Perjalanan</a>
+                    <a class="nav-link mx-1 {{ Request::is('tips*') ? 'active' : '' }}" href="{{ route('tips') }}">Tips
+                        Perjalanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="kontak.html">Kontak</a>
+                    <a class="nav-link mx-1 {{ Request::is('kata-mereka*') ? 'active' : '' }}"
+                        href="{{ route('comments.index') }}">Kata mereka</a>
                 </li>
                 @if (Auth::check())
                     <li class="nav-item">
