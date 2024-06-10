@@ -16,7 +16,7 @@ Step-by-step instructions on how to get a development environment running.
 
 ```bash
 # Clone the repository
-https://github.com/rethalica/jakingfo.git
+git clone https://github.com/rethalica/jakingfo.git
 
 # Navigate to the project directory
 cd jakingfo
