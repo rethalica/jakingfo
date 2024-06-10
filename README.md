@@ -34,6 +34,9 @@ php artisan key:generate
 # Run migrations
 php artisan migrate
 
+#jalankan seeder untuk buat user admin
+php artisan db:seed --class=AdminSeeder
+
 # Start the development server
 #jalankan tailwindcss
 npm run dev
