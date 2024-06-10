@@ -40,3 +40,5 @@ npm run dev
 
 #run laravel
 php artisan serve
+
+#default link di http://localhost:8000
