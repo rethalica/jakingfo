@@ -29,6 +29,8 @@ npm install
 cp .env.example .env
 php artisan key:generate
 
+#buat database dan sesuaikan di file .env (misal "jakingfo_db")
+
 # Run migrations
 php artisan migrate
 
