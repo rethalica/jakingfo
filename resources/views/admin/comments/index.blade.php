@@ -26,7 +26,8 @@
                                         <td class="border px-4 py-2">{{ $comment->created_at->format('d M Y, H:i') }}</td>
                                         <td class="border px-4 py-2">{{ $comment->content }}</td>
                                         <td class="border px-4 py-2">
-                                            <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
+                                            <form action="{{ route('comments.destroy', $comment->id) }}" method="POST"
+                                                onsubmit="return confirm('Anda yakin akan menghaspus komentar ini?');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"
