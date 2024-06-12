@@ -48,8 +48,8 @@
                 </div>
                 <div class="col text-center py-5 bg-blue-600 text-black">
                     <h2 class="fw-bold mb-2">Anggota Kelompok</h2>
-                    <div class="container">
-                        <div class="column">
+                    <div class="containerperson">
+                        <div class="columnperson">
                             <div class="person">
                                 - Ravindra Yardan Mukti <br />
                                   J0404221013
