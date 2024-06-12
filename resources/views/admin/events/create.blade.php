@@ -6,6 +6,16 @@
             <div class="p-6 bg-white border-b border-gray-200">
                 <h2 class="text-2xl font-semibold leading-tight">Tambah Event Baru</h2>
 
+                @if ($errors->any())
+                    <div class="mb-4">
+                        <ul class="list-disc list-inside text-sm text-red-600">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
                 <form action="{{ route('admin.events.store') }}" method="POST" enctype="multipart/form-data"
                     class="mt-6 space-y-6">
                     @csrf

@@ -13,10 +13,6 @@
                         href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1 {{ Request::is('about') ? 'active' : '' }}" href="about.html">Tentang
-                        kami</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link mx-1 {{ Request::is('destinations*') ? 'active' : '' }}"
                         href="{{ route('destinations.index') }}">Destinasi Wisata</a>
                 </li>

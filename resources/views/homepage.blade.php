@@ -35,25 +35,49 @@
         <div class="container-fluid">
             <div class="row row-cols-lg-2 row-cols-1">
                 <div class="col text-center py-5 text-white">
-                    <h2>5</h2>
-                    <h2 class="fw-bold mb-2">Tersebar di berbagai kota administrasi</h2>
+                    <h2 class="fw-bold mb-2">About JakIngfo</h2>
                     <p>
-                        Destinasi wisata yang tersebar di berbagai daerah administratif
-                        jakarta <br />
-                        Mulai dari selatan hingga utara, serta dari barat hingga timur.
+                        JakIngfo merupakan sebuah website yang dapat digunakan <br />
+                        oleh seluruh pengguna internet. <br /> <br />
+                        Tujuannya adalah memberikan informasi seperti
+                         <br />
+                         deskripsi singkat, alamat/lokasi pada google maps, <br />
+                         tips perjalanan, dan juga komentar sesama user <br />
+                         tentang suatu wisata/acara yang berada di wilayah Jakarta <br />
                     </p>
                 </div>
                 <div class="col text-center py-5 bg-blue-600 text-black">
-                    <h2>100.000+</h2>
-                    <h2 class="fw-bold mb-2">Jumlah Kunjungan</h2>
-                    <p>
-                        PADA November 2023, Badan Pusat Statistik (BPS) DKI Jakarta
-                        mencatat jumlah kunjungan wisman ke Jakarta mencapai 185.783
-                        kunjungan. <br />
-                        Kondisi tersebut mengalami peningkatan 2,24% dibandingkan dengan
-                        kondisi pada Oktober 2023 (m-to-m) yang sebanyak 181.716
-                        kunjungan.
-                    </p>
+                    <h2 class="fw-bold mb-2">Anggota Kelompok</h2>
+                    <div class="container">
+                        <div class="column">
+                            <div class="person">
+                                - Ravindra Yardan Mukti <br />
+                                  J0404221013
+                            </div>
+                            <div class="person">
+                                - Athaya Thariq Indera <br />
+                                  J0404221071
+                            </div>
+                            <div class="person">
+                                - Inayah Muharramissyiham <br />
+                                  J0404221006
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="person">
+                                - Ahmad Rasyid Khalid Ismail<br />
+                                  J0404221149
+                            </div>
+                            <div class="person">
+                                - Hafidzah Kamilah<br />
+                                  J0404221151
+                            </div>
+                            <div class="person">
+                                - Sania Maylani<br />
+                                  X1014232037
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
